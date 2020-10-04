@@ -2,7 +2,10 @@ package com.dtcc.patient;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.SQLOutput;
+import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.*;
+import java.text.SimpleDateFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,14 +13,16 @@ import java.util.regex.Pattern;
 public class readInfo {
    
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, ParseException {
+
+      Patient patient = new Patient();
         String result = "";
         File file = new File("messages.txt");
         //Read the file
         Scanner input = new Scanner(file);
         // if line starts with PID
         final String searchKey = "PID|";
-        ArrayList<String> pidfeilds = new ArrayList<String>();
+        ArrayList<Patient> pidfeilds = new ArrayList<Patient>();
         while (input.hasNextLine())
         {
             String nextLine = input.nextLine();
@@ -28,10 +33,23 @@ public class readInfo {
                 //System.out.println(pidfeilds);
 
                 String[] pidline = nextLine.split("\\|");
-                for (String e : pidline) {
-                    System.out.println(e);
-                }
-                
+                pidline[1] = null==pidline[1] ? "N/A" : pidline[1].equalsIgnoreCase("") ? "N/A" : pidline[1];
+                pidline[5] = null==pidline[5] ? "N/A" : pidline[5].equalsIgnoreCase("") ? "N/A" : pidline[5];
+                pidline[6] = null==pidline[6] ? "N/A" : pidline[6].equalsIgnoreCase("") ? "N/A" : pidline[6];
+                pidline[8] = null==pidline[8] ? "N/A" : pidline[8].equalsIgnoreCase("") ? "N/A" : pidline[8];
+                Date dob = null==pidline[7] ? new Date() : pidline[1].equalsIgnoreCase("") ? new Date() :
+                        new SimpleDateFormat("yyyymmdd").parse(pidline[7]);
+
+                pidfeilds.add(new Patient(pidline[5], pidline[6], dob, pidline[1], pidline[8].charAt(0)));
+                System.out.println(pidfeilds);
+
+
+//                for (String e : pidline) {
+//                    System.out.println(e);
+//                    pidline[3] = patient.
+//                }
+
+
             }
 
 //        String pid = input.nextLine();

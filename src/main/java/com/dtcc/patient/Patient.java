@@ -7,24 +7,19 @@ public class Patient {
     private String lastName;
     private Date dob;
     private String patientID;
-    private String Address;
-    private boolean hisOrLat;
+    //private String Address;
+    //private boolean hisOrLat;
     private char gender;
-    private long phoneNumber;
-    private long acctNumber;
+    //private long phoneNumber;
+    //private long acctNumber;
 
     Patient(){}
-    Patient(String firstName, String lastName, Date dob, String patientID, String address, boolean hisOrLat,
-            char gen, long phoneNumber, long acctNumber){
+    Patient(String firstName, String lastName, Date dob, String patientID, char gen){
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
         this.patientID = patientID;
-        this.Address = address;
-        this.hisOrLat = hisOrLat;
         this.gender = gen;
-        this.phoneNumber = phoneNumber;
-        this.acctNumber = acctNumber;
     }
 
 }
