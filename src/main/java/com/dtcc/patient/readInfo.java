@@ -31,17 +31,22 @@ public class readInfo {
 //                System.out.println(nextLine);
                 //pidfeilds.addAll(Collections.singleton(nextLine));
                 //System.out.println(pidfeilds);
-
                 String[] pidline = nextLine.split("\\|");
-                pidline[1] = null==pidline[1] ? "N/A" : pidline[1].equalsIgnoreCase("") ? "N/A" : pidline[1];
-                pidline[5] = null==pidline[5] ? "N/A" : pidline[5].equalsIgnoreCase("") ? "N/A" : pidline[5];
-                pidline[6] = null==pidline[6] ? "N/A" : pidline[6].equalsIgnoreCase("") ? "N/A" : pidline[6];
-                pidline[8] = null==pidline[8] ? "N/A" : pidline[8].equalsIgnoreCase("") ? "N/A" : pidline[8];
-                Date dob = null==pidline[7] ? new Date() : pidline[1].equalsIgnoreCase("") ? new Date() :
+                pidline[3] = null == pidline[1] ? "N/A" : pidline[1].equalsIgnoreCase("") ? "N/A" : pidline[3];
+                pidline[5] = null == pidline[5] ? "N/A" : pidline[5].equalsIgnoreCase("") ? "N/A" : pidline[5];
+                pidline[6] = null == pidline[6] ? "N/A" : pidline[6].equalsIgnoreCase("") ? "N/A" : pidline[6];
+                pidline[8] = null == pidline[8] ? "N/A" : pidline[8].equalsIgnoreCase("") ? "N/A" : pidline[8];
+                pidline[10] = null == pidline[10] ? "N/A" : pidline[10].equalsIgnoreCase("") ? "N/A" : pidline[10];
+                Date dob = null == pidline[7] ? new Date() : pidline[1].equalsIgnoreCase("") ? new Date() :
                         new SimpleDateFormat("yyyymmdd").parse(pidline[7]);
 
-                pidfeilds.add(new Patient(pidline[5], pidline[6], dob, pidline[1], pidline[8].charAt(0)));
-                System.out.println(pidfeilds);
+                pidfeilds.add(new Patient(pidline[5], pidline[6], dob, pidline[3], pidline[8].charAt(0), pidline[10]));
+                //System.out.println(pidfeilds);
+            }
+            for (Patient p: pidfeilds) {
+                System.out.println(p.toString());
+            }
+
 
 
 //                for (String e : pidline) {
@@ -77,7 +82,7 @@ public class readInfo {
 //            System.out.println(matcher.group());
 //        }
 
-            }}}
+            }}
 
 
 
