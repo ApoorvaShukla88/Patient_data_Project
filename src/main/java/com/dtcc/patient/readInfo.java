@@ -32,15 +32,18 @@ public class readInfo {
                 //pidfeilds.addAll(Collections.singleton(nextLine));
                 //System.out.println(pidfeilds);
                 String[] pidline = nextLine.split("\\|");
-                pidline[3] = null == pidline[1] ? "N/A" : pidline[1].equalsIgnoreCase("") ? "N/A" : pidline[3];
+                pidline[3] = (null == pidline[3]) ? "N/A" : pidline[3].equalsIgnoreCase("") ? "N/A" : pidline[3];
                 pidline[5] = null == pidline[5] ? "N/A" : pidline[5].equalsIgnoreCase("") ? "N/A" : pidline[5];
                 pidline[6] = null == pidline[6] ? "N/A" : pidline[6].equalsIgnoreCase("") ? "N/A" : pidline[6];
                 pidline[8] = null == pidline[8] ? "N/A" : pidline[8].equalsIgnoreCase("") ? "N/A" : pidline[8];
                 pidline[10] = null == pidline[10] ? "N/A" : pidline[10].equalsIgnoreCase("") ? "N/A" : pidline[10];
-                Date dob = null == pidline[7] ? new Date() : pidline[1].equalsIgnoreCase("") ? new Date() :
+                pidline[11] = null == pidline[11] ? "N/A" : pidline[11].equalsIgnoreCase("") ? "N/A" : pidline[11];
+                pidline[14] = null == pidline[14] ? "N/A" : pidline[14].equalsIgnoreCase("") ? "N/A" : pidline[14];
+                Date dob = null == pidline[7] ? new Date() : pidline[7].equalsIgnoreCase("") ? new Date() :
                         new SimpleDateFormat("yyyymmdd").parse(pidline[7]);
 
-                pidfeilds.add(new Patient(pidline[5], pidline[6], dob, pidline[3], pidline[8].charAt(0), pidline[10]));
+                pidfeilds.add(new Patient(pidline[5], pidline[6], dob, pidline[3], pidline[8].charAt(0), pidline[10],
+                        pidline[11], pidline[14]));
                 //System.out.println(pidfeilds);
             }
             for (Patient p: pidfeilds) {

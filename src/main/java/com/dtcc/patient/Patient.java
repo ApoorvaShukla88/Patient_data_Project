@@ -10,17 +10,20 @@ public class Patient {
     private String Address;
     //private boolean hisOrLat;
     private char gender;
-    //private long phoneNumber;
-    //private long acctNumber;
+    private long phoneNumber;
+    private long acctNumber;
 
     Patient(){}
-    Patient(String firstName, String lastName, Date dob, String patientID, char gen, String Address){
+    Patient(String firstName, String lastName, Date dob, String patientID, char gen, String Address, long phoneNumber,
+            long acctNumber){
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
         this.patientID = patientID;
         this.gender = gen;
         this.Address = Address;
+        this.phoneNumber = phoneNumber;
+        this.acctNumber = acctNumber;
     }
 
     public String toString(){
