@@ -1,0 +1,5 @@
+1. Read the information from the file
+2. Pass in the key you want to search
+3. Store The PID feilds dividved on "|" and store in Arraylist
+4. Create a Patient object and theie related feilds
+5.
