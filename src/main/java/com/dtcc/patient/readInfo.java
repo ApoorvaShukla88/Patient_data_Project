@@ -186,17 +186,6 @@ public class readInfo {
                         }
                         break;
 
-                    case 30:
-                        // RETRIEVE PATIENT-DEATH-ID
-                        if (!arrayPID[i].isEmpty()) {
-                            if (arrayPID[i] == "NO") {
-                                patient.setPatientDeathInd(false);
-                            } else {
-                                patient.setPatientDeathInd(true);
-                            }
-                            patient.setPatientDeathInd(Boolean.parseBoolean(arrayPID[i]));
-                        }
-                        break;
                 }
             }
 //			System.out.println(patient.getNumOfObjects());
