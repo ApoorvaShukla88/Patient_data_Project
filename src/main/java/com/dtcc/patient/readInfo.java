@@ -65,36 +65,6 @@ public class readInfo {
                             patient.setSex(arrayPID[i].charAt(0));
                         }
                         break;
-                    case 10:
-                        // Retrieve Race
-                        if (!arrayPID[i].isEmpty()) {
-                            String[] arrayRace = arrayPID[i].split("\\^");
-                            if (arrayRace.length > 0) {
-                                switch (arrayRace[0]) {
-                                    case "2131-1":
-                                        patient.setRace("Other Race");
-                                        break;
-                                    case "2106-3":
-                                        patient.setRace("White");
-                                        break;
-                                    case "2076-8":
-                                        patient.setRace("Native Hawaiian or Other Pacific Islander");
-                                    case "2054-5":
-                                        patient.setRace("Black or African American");
-                                        break;
-                                    case "2028-9":
-                                        patient.setRace("Asian");
-                                        break;
-                                    case "1002-5":
-                                        patient.setRace("American Indian or Alaska Native");
-                                        break;
-                                    default:
-                                        patient.setRace("Other Race");
-                                        break;
-                                }
-                            }
-                        }
-                        break;
                     case 11:
                         // Retrieve Patient Address Information
                         String[] arrayAddress = arrayPID[11].split("\\^");

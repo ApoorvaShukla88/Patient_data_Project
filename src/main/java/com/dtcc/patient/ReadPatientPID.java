@@ -38,11 +38,9 @@ public class ReadPatientPID {
                 System.out.println(ex);
             }
 
-            System.out.println("Patient Information from HL7 file " + "\n");
+            System.out.println("Patient Information from HL7 messages file " + "\n");
             for (int i = 0; i < arrayPatientObject.length; i++) {
-                System.out.println(arrayPatientObject[i].toString()); // toString Method is called on Patient Object to
-                // display the snapshot of all the Patient
-                // Objects
+                System.out.println(arrayPatientObject[i].toString());
             }
 
         } catch (FileNotFoundException ex) {
